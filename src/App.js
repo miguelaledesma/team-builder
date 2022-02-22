@@ -4,13 +4,7 @@ import './App.css';
 
 
 
-const initialFormValue = {
-  name: '', 
-  gamerTag: '', 
-  favGame: '' //going to make this a drop down list
-}
 
-console.log(initialFormValue)
 
 
 
@@ -22,9 +16,15 @@ function App() {
 
 const [team, setTeam] = useState([]); 
 
-const [values, setValues] = useState(initialFormValue)
+const [values, setValues] = useState({name: '', gamerTag: '', favGame: ''})
 
+const onSubmit = () => {
+  setTeam([values, ...team])
+}
 
+const onChange = (name, value) => {
+  setValues({...values, [name]: value})
+}
 
 
 
@@ -35,6 +35,9 @@ const [values, setValues] = useState(initialFormValue)
       <h1>Team Builder</h1>
       <TeamForm 
       values ={values}
+      change = {onChange}
+      submit = {onSubmit}
+
       
       /> 
     </div>

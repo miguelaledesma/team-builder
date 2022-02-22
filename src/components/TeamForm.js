@@ -2,28 +2,28 @@ import React from "react";
 
 const TeamForm = (props) => {
 
-    const {values, update , submit} = props
+
 
 const handleChange = (evt) => {
 
-   const name = evt.target.name 
+  const {name, value} = evt.target
 
-   const value = evt.target.value
+   props.change(name, value); 
 }
 
 //submit handler here
 const handleSubmit = (evt) => {
-    evt.preventDefault()
-    submit() 
+    evt.preventDefault(); 
+    props.submit() 
 }
 
 
     return (
-        <form>
+        <form onSubmit = {handleSubmit}>
             <label> Teammate Name 
             <input 
                 placeholder = 'member name'
-                value = {values.name}
+                value = {props.values.name}
                 name = "name"
                 onChange = {handleChange} 
 
@@ -33,7 +33,7 @@ const handleSubmit = (evt) => {
             <label> Teammate GamerTag 
             <input 
                 placeholder = 'Type GamerTag'
-                value = {values.gamerTag}
+                value = {props.values.gamerTag}
                 name = "gamertag"
                 onChange = {handleChange} 
 
@@ -41,14 +41,19 @@ const handleSubmit = (evt) => {
             </label>
 
             <label> Favorite Game  
-            <select>  
-            <input 
+            <select value = {props.values.favGame} name = "favGame" onChange = {handleChange}>  
+            {/* <input 
                 placeholder = 'Games'
-                value = {values.favGame}
+                value = {props.values.favGame}
                 name = "favGame"
                 onChange = {handleChange} 
 
-            /> 
+            />  */}
+            <option value = ""> --Select Option-- </option>
+            <option value = "Warzone Pacific"> Call of Duty: WARZONE </option>
+            <option value = "Halo Infinite"> Halo Infinite </option>
+            <option value = "APEX"> APEX </option>
+            <option value = "Fortnite"> Fortnite </option>
     
             
             </select>
