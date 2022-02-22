@@ -20,7 +20,8 @@ const handleSubmit = (evt) => {
 
     return (
         <form onSubmit = {handleSubmit}>
-            <label> Teammate Name 
+            <label> Name 
+                
             <input 
                 placeholder = 'member name'
                 value = {props.values.name}
@@ -32,9 +33,9 @@ const handleSubmit = (evt) => {
 
             <label> Teammate GamerTag 
             <input 
-                placeholder = 'Type GamerTag'
+                placeholder = 'GamerTag'
                 value = {props.values.gamerTag}
-                name = "gamertag"
+                name = "gamerTag"
                 onChange = {handleChange} 
 
             /> 
