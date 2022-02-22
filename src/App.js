@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import TeamForm from './components/TeamForm'
 import './App.css';
 
 
 
 const initialFormValue = {
-  teammate: '', 
-  username: '', 
+  name: '', 
+  gamerTag: '', 
   favGame: '' //going to make this a drop down list
 }
 
@@ -31,7 +32,11 @@ const [values, setValues] = useState(initialFormValue)
 
   return (
     <div className="App">
-      <h1>Teammates Form</h1>
+      <h1>Team Builder</h1>
+      <TeamForm 
+      values ={values}
+      
+      /> 
     </div>
   );
 }
