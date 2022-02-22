@@ -19,9 +19,10 @@ const handleSubmit = (evt) => {
 
 
     return (
-        <form onSubmit = {handleSubmit}>
+        <form className="form container"  onSubmit = {handleSubmit}>
+            <div className = 'input-container'> 
             <label> Name 
-                
+
             <input 
                 placeholder = 'member name'
                 value = {props.values.name}
@@ -30,8 +31,10 @@ const handleSubmit = (evt) => {
 
             /> 
             </label>
+            </div>  
 
-            <label> Teammate GamerTag 
+            <div className = 'input-container ic1'>
+            <label> GamerTag 
             <input 
                 placeholder = 'GamerTag'
                 value = {props.values.gamerTag}
@@ -40,7 +43,9 @@ const handleSubmit = (evt) => {
 
             /> 
             </label>
+            </div> 
 
+            <div className = 'input-container ic2'> 
             <label> Favorite Game  
             <select value = {props.values.favGame} name = "favGame" onChange = {handleChange}>  
             {/* <input 
@@ -59,6 +64,11 @@ const handleSubmit = (evt) => {
             
             </select>
             </label> 
+            <div className='submit'>
+          <button>Submit</button>
+        </div>
+            </div> 
+            
         </form>
     )
 }
