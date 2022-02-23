@@ -20,6 +20,7 @@ const [values, setValues] = useState({name: '', gamerTag: '', favGame: ''})
 
 const onSubmit = () => {
   setTeam([values, ...team])
+  setValues({name: '', gamerTag: '', favGame: ''})
 }
 
 const onChange = (name, value) => {
@@ -40,6 +41,16 @@ const onChange = (name, value) => {
 
       
       /> 
+      {team.map((member, index) => {
+        return(
+          
+          <div className = "results" key ={index} > 
+          
+            {member.gamerTag}, {member.name}, {member.favGame}
+             </div>
+        )
+      })}
+
     </div>
   );
 }
